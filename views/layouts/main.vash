@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@model.title</title>
+    @html.block('head')
+</head>
+<body>
+
+@html.block('body')
+
+</body>
+</html>
+
+@html.block('bottom')
+

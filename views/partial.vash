@@ -1,0 +1,3 @@
+<p>
+    I am from partial view @model.title
+</p>
