@@ -22,8 +22,6 @@ app.get('/', function (req, res) {
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
-//app.use(express.static(path.join(__dirname, 'demo')));
-//app.use(express.static(path.join(__dirname, 'demoapp/html')));
 
 var server = app.listen(app.get("port"), function () {
     console.log(__dirname);

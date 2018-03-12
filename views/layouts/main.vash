@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <!-- meta标签设置-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- app标题 -->
     <title>@model.title</title>
+    <!-- 使用iOS CSS主题样式-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css" />
+    <!-- iOS related颜色样式 -->
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css" />
+    <!-- 自定义样式-->
+    <link rel="stylesheet" href="css/my-app.css" />
     @html.block('head')
 </head>
 <body>
