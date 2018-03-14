@@ -18,7 +18,7 @@ app.set('port', 8000);
 
 app.get('/', function (req, res) {
     var model = { title : "Hello Vash" };
-    res.render("index");
+    res.render("index", model);
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
