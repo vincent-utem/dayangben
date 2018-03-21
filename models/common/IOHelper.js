@@ -10,7 +10,7 @@ function getDybDirectories() {
             return console.log(err);
         }
         files.forEach( function (file){
-            console.log( typeof(file) );
+            console.log( file );
         });
     });
 }
