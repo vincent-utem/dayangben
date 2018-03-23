@@ -28,7 +28,7 @@ log4js.configure({
             pattern: 'yyyy-MM-dd.log',
             alwaysIncludePattern: true
         },
-        models: {    // 模型层日志日志
+        models: {    // 模型层日志
             type: 'dateFile',
             filename: config.basePath + '/logs/models/',
             pattern: 'yyyy-MM-dd.log',

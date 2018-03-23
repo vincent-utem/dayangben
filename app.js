@@ -10,10 +10,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var logHelper = require('./models/common/logHelper');
 
-// 加载路由控制
-var index = require('./routes/index');
-var users = require('./routes/users');
-
 // 创建项目实例
 var app = express();
 
@@ -37,9 +33,9 @@ app.use(cookieParser());
 // 定义静态文件目录
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 匹配路径和路由
-app.use('/', index);
-app.use('/users', users);
+// 加载路由控制并匹配路径和路由
+var routesConfig = require('./routes/routesConfig');
+routesConfig.load(app);
 
 // 404错误处理
 app.use(function(req, res, next) {

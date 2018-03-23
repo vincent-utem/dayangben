@@ -1,22 +1,31 @@
 /**
  * Created by vincent on 2018/3/20.
  */
-var config = require('../../config');
+
 var fs = require('fs');
+var path = require('path');
+
+var config = require('../../config');
 var logHelper = require('./logHelper');
 
 var logger = logHelper.getLogger('models');
 
-function getDybDirectories() {
-
+function getDybDirectories(callback) {
     fs.readdir(config.dybFilesPath, function(err, files){
         if (err) {
-            return console.log(err);
+            logger.error(err);
         }
         files.forEach( function (file){
-            logger.info(file);
+            var filePath = path.normalize(config.dybFilesPath + '/' + file);
+            fs.stat(filePath, function (err, stat) {
+                if(stat.isDirectory()) {
+                    logger.info("检测到目录 " + filePath);
+                    if(typeof(callback) == "function")
+                        callback(filePath);
+                }
+            });
         });
     });
 }
 
-getDybDirectories();
+exports.getDybDirectories = getDybDirectories;
